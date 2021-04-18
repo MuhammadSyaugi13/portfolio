@@ -1,0 +1,38 @@
+body{
+    min-height: 2000px;
+}
+#projects{
+background-color: #e4e4e4;
+}
+
+.text-about{
+    text-indent: 15px;
+    text-align: justify;
+}
+
+.i{
+    margin-left: 15px;
+}
+.jumbotron{
+    margin-top: -75px;
+    padding-top: 7rem;
+    background-image: url(../img/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 0 -150px;
+}
+
+.jumbotron .row{
+    margin-top: 120px;
+}
+
+/* Skills */
+
+.card img{
+    width: 80px !important;
+    /* height: 50px; */
+}
+
+/* Akhir Skills */
+
+
