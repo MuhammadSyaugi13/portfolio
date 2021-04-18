@@ -1,9 +1,12 @@
-body{
-    min-height: 2000px;
-}
-#projects{
+
+#projects, #contact{
 background-color: #e4e4e4;
 }
+
+section{
+    padding-top: 5rem;
+}
+
 
 .text-about{
     text-indent: 15px;
@@ -29,7 +32,7 @@ background-color: #e4e4e4;
 /* Skills */
 
 .carde img{
-    width: 80px !important;
+    width: 120px !important;
     /* height: 50px; */
 }
 
