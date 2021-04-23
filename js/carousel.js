@@ -12,9 +12,11 @@ window.addEventListener('scroll', () => {
 // loading
 var loading = document.getElementById("loading");
 var bgLoad = document.getElementById("bg-load");
+var pWait = document.getElementById("pWait");
 window.addEventListener('load', function () {
     loading.style.display = "none";
     bgLoad.style.display = "none";
+    pWait.style.display = "none";
 
 });
 
