@@ -9,10 +9,13 @@ window.addEventListener('scroll', () => {
     }
 });
 
+gsap.to('.hello', {
+    duration: 2, delay: 1.5, text: 'Hello World I'm'});
+gsap.to('.hello', { duration: 2, delay: 1.5, text: "Muhammad Syaugi" });
 
 
-// carousel
-for (let index = 1; index < 12; index++) {
+    // carousel
+    for(let index = 1; index< 12; index++) {
 
 
     $(".owl-carousel").append(

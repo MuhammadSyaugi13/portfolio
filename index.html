@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- my css -->
     <link rel="stylesheet" href="style/my.css">
@@ -56,9 +58,15 @@
                 </div>
 
                 <div class="col-sm-6 mt-5">
-                    <p class="lead mb-0">Hello World I'm</p>
-                    <h1 class="display-4 mt-0">Muhammad Syaugi</h1>
-                    <p class="lead">Web Developer | College Student | Graphic Designer</p>
+                    <p class="lead mb-0 hello">
+                        <!-- Hello World I'm-->
+                    </p>
+                    <h1 class="display-4 mt-0 ms">
+                        <!-- Muhammad Syaugi-->
+                    </h1>
+                    <p class="lead webdev">
+                        <!-- Web Developer | College Student | Graphic Designer-->
+                    </p>
                 </div>
 
             </div>
@@ -81,28 +89,34 @@
                 <div class="col mb-5">
                     <h2 class="">About Me</h2>
                 </div>
-            </div>
-            <div class="row justify-content-around">
-                <div class="col-sm-4">
-                    <b>Nickname :</b><br>
-                    <i class="i">Ogi</i>
-                    <br>
-                    <b>Place & Date of Birth :</b><br>
-                    <i class="i">Jakarta, 13 August 1999</i>
-                    <br>
-                    <b>Address :</b><br>
-                    <div class="i"><i>Cilebut Timur, Sukaraja, Kabupaten Bogor - Jawa Barat</i></div>
-                </div>
 
-                <div class="col-sm-6 text-about">
-                    Hi Everyone You can call me Ogi. I am a Collage Student and Freelancer. I like creative things and i
-                    develop what i like into technology science
 
-                    Skills that I have are Web Design, Web programming, Graphic Design, & Photo editing. You can see my
-                    creation on this web profile.
+                <div class="row justify-content-around ">
+                    <div class="col-sm-4" data-aos="fade-right" data-aos-offset="240" data-aos-duration="2000">
+                        <b>Nickname :</b><br>
+                        <i class="i">Ogi</i>
+                        <br>
+                        <b>Place & Date of Birth :</b><br>
+                        <i class="i">Jakarta, 13 August 1999</i>
+                        <br>
+                        <b>Address :</b><br>
+                        <div class="i"><i>Cilebut Timur, Sukaraja, Kabupaten Bogor - Jawa Barat</i></div>
+                    </div>
 
-                    I also listed some of my social media on this web profile Hopefully we can get to know better and
-                    can work together well Thank u
+                    <div class="col-sm-6 text-about" data-aos="fade-left" data-aos-duration="2000" data-aos-offset="240"
+                        data-aos-delay="200">
+                        Hi Everyone You can call me Ogi. I am a Collage Student and Freelancer. I like creative things
+                        and i
+                        develop what i like into technology science
+
+                        Skills that I have are Web Design, Web programming, Graphic Design, & Photo editing. You can see
+                        my
+                        creation on this web profile.
+
+                        I also listed some of my social media on this web profile Hopefully we can get to know better
+                        and
+                        can work together well Thank u
+                    </div>
                 </div>
             </div>
         </div>
@@ -234,6 +248,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 2000
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/TextPlugin.min.js"></script>
+    <script>
+        gsap.registerPlugin(TextPlugin);
+        gsap.from('.jumbotron img', { duration: 3.5, rotation: -180, opacity: 0, ease: 'power4.out' });
+        gsap.to('.hello', { duration: 1, text: "Hello World I'm" });
+        gsap.to('.ms', { duration: 1, delay: .9, text: "Muhammad Syaugi" });
+        gsap.to('.webdev', { duration: 1, delay: 1.5, text: "Web Developer | College Student | Graphic Designer" });
+    </script>
     <script src="js/carousel.js"></script>
 
 
