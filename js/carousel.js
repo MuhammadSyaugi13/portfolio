@@ -9,13 +9,18 @@ window.addEventListener('scroll', () => {
     }
 });
 
-gsap.to('.hello', {
-    duration: 2, delay: 1.5, text: 'Hello World I'm'});
-gsap.to('.hello', { duration: 2, delay: 1.5, text: "Muhammad Syaugi" });
+// loading
+var loading = document.getElementById("loading");
+var bgLoad = document.getElementById("bg-load");
+window.addEventListener('load', function () {
+    loading.style.display = "none";
+    bgLoad.style.display = "none";
+
+});
 
 
-    // carousel
-    for(let index = 1; index< 12; index++) {
+// carousel
+for (let index = 1; index < 12; index++) {
 
 
     $(".owl-carousel").append(
