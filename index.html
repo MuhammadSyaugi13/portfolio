@@ -225,18 +225,37 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <form action="">
+
+                    <!-- alert -->
+                    <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
+                        <strong>Thank you</strong> we have received your message.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <!-- Akhir alert -->
+
+                    <form name="Contact-Portfolio">
+                        <div class="mb-3">
+                            <label for="nama" class="form-label"><b>Name :</b></label>
+                            <input type="text" name="nama" class="form-control" id="nama" aria-describedby="emailHelp">
+                        </div>
+
                         <div class="mb-3">
                             <label for="email" class="form-label"><b>Email :</b></label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                            <input type="email" name="email" class="form-control" id="email"
+                                aria-describedby="emailHelp">
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label"><b> Pesan :</b></label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label for="exampleFormControlTextarea1" class="form-label"><b> Messege :</b></label>
+                            <textarea class="form-control" name="pesan" id="exampleFormControlTextarea1"
+                                rows="3"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Kirim</button>
+                        <button type="submit" class="btn btn-kirim btn-primary">Send</button>
+                        <button class="btn btn-loading btn-primary d-none" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
                     </form>
                 </div>
             </div>
@@ -277,6 +296,37 @@
         gsap.to('.webdev', { duration: 1.5, delay: 1.5, text: "Web Developer | College Student | Graphic Designer" });
     </script>
     <script src="js/carousel.js"></script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw8ciH1UYr3zOONmg1qb43Gokpxt1MFAqJUpw5-cglQrbfkRfjhRXQ1xjBYQ0RZgMT7/exec'
+        const form = document.forms['Contact-Portfolio']
+        const btnKirim = document.querySelector('.btn-kirim');
+        const btnLoading = document.querySelector('.btn-loading');
+        const btnAlert = document.querySelector('.alert');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            // ketika tombol send diklik 
+            // tampilkan tombol loading, hilangkan tombol kirim
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    // tampilakn tombol kirim, dan hilangkan tombol loading
+                    btnLoading.classList.toggle('d-none');
+                    btnKirim.classList.toggle('d-none');
+                    // tampilkan tombol alert
+                    btnAlert.classList.toggle('d-none');
+                    // reset form
+                    form.reset();
+
+                    console.log('Success!', response)
+                }
+                )
+                .catch(error => console.error('Error!', error.message))
+        });
+    </script>
 
 
 </body>
