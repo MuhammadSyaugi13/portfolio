@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trial Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    
+    <div class="container p-5">
+        <button id="button-notif" class="pointer-cursor bg-yellow-300 hover:bg-yellow-500 px-2 py-1 rounded">Send Notif</button>
+    </div>
+
+    <script>
+        const button = document.getElementById('button-notif')
+
+        button.addEventListener("click", ()=>{
+            Notification.requestPermission().then(perm=>{
+                if(perm == 'granted'){
+                    const notification = new Notification("example notif", {
+                        body: "ini adalah text",
+                        data: 'hello world'
+                    })
+
+                    notification.addEventListener("error", e => {
+                        alert(`error notification : ${e}`)
+                    })
+                }else{
+                    alert('tidak bisa menerima notifikasi')
+                }
+            })
+        })
+
+    </script>
 </body>
 </html>
